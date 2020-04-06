@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title 'Mes petits papiers'%}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/form.css">
+        <link rel="stylesheet" href="../../css/admin.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    	<div class="container">
+	    	<header class="row">
+	    		<div class="col-md-3">
+	    			<a href="{{ path('home') }}">
+	    			<img src="../../images/logo.jpg"  alt="logo" width="250" height="250"/></a>
+	    		</div>
+	    		<div class="col-md-9">
+	    			<h1 class="row">Helga Leguay</h1>
+	    			<h2>Créatrice de décoration et art mural</h2>
+	    		</div>
+	    	</header>
+	    	<nav class="navbar navbar-expand-lg menu">
+				<div class="collapse navbar-collapse" id="menubar">
+			   	 	<ul class="navbar-nav mr-auto"><!-- premier menu -->
+			   	 		{% if is_granted('ROLE_ADMIN') %}
+				  			<li class="nav-item">
+				  				<a href="{{path('home')}}" class="nav-link">Accueil</a>
+				  			</li>
+				  			<li class="nav-item">
+				  				<a href="{{path('admin.compositions')}}" class="nav-link barre">Compositions</a>
+				  			</li>
+				  			<li class="nav-item">
+				  				<a href="{{path('admin')}}" class="nav-link barre">Gestion</a>
+				  			</li>
+				  		{% elseif is_granted('ROLE_USER') %}
+				  			<li class="nav-item">
+				  				<a href="{{path('home')}}" class="nav-link">Accueil</a>
+				  			</li>
+				  			<li class="nav-item">
+				  				<a href="{{path('compositions')}}" class="nav-link barre">Compositions</a>
+				  			</li>
+				  		{% else %}
+				  			<li class="nav-item">
+				  				<a href="{{path('home')}}" class="nav-link">Accueil</a>
+				  			</li>
+				  			<li class="nav-item">
+				  				<a href="{{path('compositions')}}" class="nav-link barre">Compositions</a>
+				  			</li>
+				  		{% endif %}
+			  		</ul><!-- fin de premier menu -->	    		    			  
+					{% if app.user %}<!-- affiche connecter|deconnecter -->
+				  		<ul class="navbar-nav">
+				  			<li class="nav-item">
+				  				<a href="{{ path('security_logout') }}" class="nav-link">Se déconnecter</a>
+				  			</li>
+				  		</ul>
+					{% else %}
+				  		<ul class="navbar-nav">
+				  			<li class="nav-item">
+				  				<a href="{{ path('security_login') }}" class="nav-link">Se connecter</a>
+				  			</li>
+				  		</ul>
+					{% endif %}<!-- fin de utilisateur connecté -->
+			  	</div><!-- fin de .menubar -->
+			</nav><!-- fin de nav .menu -->
+	        {% block body %}{% endblock %}
+			<hr>
+	        <footer class="row">
+	        	<div class="col-md-3"><img src="../../images/arc.jpg" href="/" alt="arc" /></div>
+	        	<div class="col-md-6 reseau">
+	        		<img src="../../images/contact.jpg" href="/" alt="contact" />
+	        		<img src="../../images/facebook.jpg" href="/" alt="facebook" />
+	        		<img src="../../images/insta.png" href="/" alt="insta" />
+	        		<p>à propos</p>
+	        	</div>
+	        	<div class="col-md-3 signature">
+	        		<div class="row"><img src="../../images/signature.jpg" href="/" alt="signature" /></div>
+	        		<p class="row">copyright</p>
+	        	</div>
+	        </footer>
+	    </div><!-- fin de container -->
+	    	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	        <!-- <script src="js/portfolio"></script> -->
+	        {% block javascripts %}{% endblock %}
+    </body>
+</html>

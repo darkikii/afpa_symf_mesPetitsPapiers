@@ -1,0 +1,32 @@
+form .row
+{
+	margin-bottom: 5px;
+}
+
+form .row input
+{
+	margin-left: 10px;
+}
+
+label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+textarea
+{
+	width:100%;
+}
+
+.editer label
+{
+	width: 50px;
+}
+
+#commentaire label
+{
+	margin-top:5px;
+	float: none;
+}

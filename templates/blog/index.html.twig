@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- =========================================================================================================================================================================
+=========================================================== accueil des creations =====================================================================================
+========================================================================================================================================================================= -->
+	<section class="row affiche"><!-- affiche les 4 dernieres creations en diagonales -->
+		<div class="publication">
+			<div class="publication_parent">				
+				{% for creation in creations %}<!-- lecture des creations -->
+					{% set counter = ( counter | default(0) ) + 1 %}<!-- compteur pour gerer les class css -->
+					<div class="col-3 aspect-div div{{ counter }}">
+						<a href="{{ path('creation_show', {'id': creation.id}) }}">
+						<img src="{{ creation.image }}" alt="{{ creation.titre }}" /></a>
+					</div>			
+				{% endfor %}<!-- fin de lecture des creations -->
+			</div><!-- fin de .publication_parent -->
+		</div><!-- fin de .publication -->		
+	</section><!-- fin de .affiche -->
+	<section class="row accueil"><!-- affiche le texte d'intro -->
+		<aside class="col-12 centrer">Je réinvente et sublime vos idées en réalisant des créations <span ID="artisanale">Artisanales</span>. Avec des matériaux soigneusement choisis et le charme du <span ID="main">fait main,</span> je travaille pour vous. Ensemble point par point en fonctionde vos envies et de vos aspirations, créons <span ID="unique">l'Unique.</span>
+		</aside>
+		<aside class="col-12 right arc">
+			Pour vos <span ID="deco">décorations</span> d'intérieur (fresque, suspension, composition florale, origami)</br>
+			Vos plus beaux <span ID="evenement">évènements</span> (mariage, baptême, naissance)</br>
+			Vos locaux <span ID="pro">professionnels</span> (vitrine, lieux d'accueil)</br>
+			Vos idées <span ID="cadeaux">cadeaux</span> (noël, anniversaire)</br>
+			Choississez le <span ID="mesure">Sur mesure</span></br>
+		</aside>
+	</section><!-- fin de .accueil -->
+{% endblock %}

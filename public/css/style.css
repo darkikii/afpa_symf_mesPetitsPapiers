@@ -1,0 +1,370 @@
+body
+{
+	
+}
+
+h1, h2, h3
+{
+	font-family: Brush Script MT;
+}
+
+h1
+{
+	
+	text-shadow: 4px 4px 2px pink;
+	font-size: 6rem;
+}
+
+h2
+{
+	font-size: 4rem;
+	text-shadow: 2px 2px 2px pink;
+}
+
+h3
+{
+	font-size: 2rem;
+	text-align: center;
+}
+
+h3 a
+{
+	color:black;
+}
+
+.centrer
+{
+	text-align: center;
+}
+
+.right
+{
+	text-align: right;
+}
+
+.justifier
+{
+	text-align: justify;
+}
+
+.bold
+{
+	font-weight:bold;
+}
+
+/*******************************************************************************************************************************************
+********************************************* Menu *****************************************************************************************
+*******************************************************************************************************************************************/
+.menu
+{
+	background-image:  url(../images/Rose-menu.jpg);
+	margin: 10px;
+	padding:0px;
+	border-radius: 40px;
+}
+
+#menubar a
+{
+	color: white;
+	font-family: Brush Script MT;
+	font-size: 2rem;
+}
+
+#menubar a:hover
+{
+   color: pink;
+   font-size: 2.5rem;
+}
+
+.barre:before
+{
+	content: " | ";
+}
+
+/*******************************************************************************************************************************************
+********************************************* Footer ***************************************************************************************
+*******************************************************************************************************************************************/
+footer
+{
+   margin:10px;
+}
+
+.reseau
+{
+   display:inline-block;
+   text-align: center;
+   margin-top: 50px;
+}
+
+.reseau img
+{
+	width: 50px;
+	height: 50px;
+   margin:15px;
+}
+
+.reseau p
+{
+   width:30%;
+   margin: auto;
+   border: 0.5px solid black;
+   border-radius:50%;
+   color:white;
+   background-color: blue;
+}
+
+.signature
+{
+   position: relative;
+}
+
+.signature img{
+   vertical-align: center;
+   position:absolute;
+   bottom:40px;
+   right:0px;
+}
+
+.signature p{
+   position:absolute;
+   bottom:0;
+   right:50%;
+}
+
+/*******************************************************************************************************************************************
+********************************************* Acccueil *************************************************************************************
+*******************************************************************************************************************************************/
+.accueil
+{
+	width: 80%;
+	margin:auto;
+}
+
+/* .arc
+{
+	padding-right: 25%;
+} */
+
+#artisanale
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	font-family: Brush Script MT;
+}
+
+#main
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	color:red;
+	font-family: Brush Script MT;
+}
+
+#unique
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	color:yellow;
+	font-family: Brush Script MT;
+}
+
+#deco
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	font-family: Brush Script MT;
+}
+
+#evenement
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	color:blue;
+	font-family: Brush Script MT;
+}
+
+#pro
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	color:pink;
+	font-family: Brush Script MT;
+}
+
+#cadeaux
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	color:yellow;
+	font-family: Brush Script MT;
+}
+
+#mesure
+{
+	font-size: 2.5rem;
+	font-style: bold;
+	font-family: Brush Script MT;
+}
+
+/*******************************************************************************************************************************************
+********************************************* Affiche **************************************************************************************
+*******************************************************************************************************************************************/
+.affiche
+{
+  padding: 0px;
+  width:100%; 
+}
+
+.publication{ 
+   /*border:solid 4px silver; */
+   border-radius:35px; 
+   height: 340px;
+   margin: 0px auto; 
+   overflow:hidden; 
+   position:relative; 
+   background-color:#EDEDED; 
+  /*background-image:url(/images/barkground/fond_jaune.png);*/
+} 
+
+.publication_parent{
+   width:800px; 
+   height:400px; 
+   -webkit-perspective : 2500px; 
+   -moz-perspective : 2500px; 
+   -o-perspective : 2500px; 
+   -ms-perspective : 2500px; 
+   perspective : 2500px; 
+} 
+
+/*On défini avec une seconde classe le style générique de la div ainsi que les paramètres de la transition qui aura lieu : */
+
+.aspect-div{ 
+   z-index:1; 
+   position:absolute; 
+   border:red 2px solid;
+   background-size:350px 300px; /*taille image en background*/
+   border:solid 1px black; 
+   display:inline-block; 
+   width:350px; /*taille du carre*/
+   height:300px; 
+   margin-top:15px; 
+   opacity:0.8; 
+   cursor:pointer; 
+   /*background-image:url(/images/barkground/fond_jaune.png);*/
+   -webkit-transition: all 800ms linear; 
+   -moz-transition: all 800ms linear; 
+   -o-transition: all 800ms linear; 
+   -ms-transition: all 800ms linear; 
+} 
+
+.aspect-div img{
+  width: 200;
+  height: 200;
+  opacity: 0;
+  filter: alpha(opacity=0); /* For IE8 and earlier */
+}
+
+/*Les styles appliqués à la première div affichant une image sont les suivant : 
+
+Le style initiale applique une série de transformations qui positionnent la div de façon inclinée et tournée : */
+
+.div1{
+   background-image:url(../images/signature.jpg); 
+   -webkit-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -moz-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -o-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -ms-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+}
+
+/*La transition a lieu au passage de la souris et se défini au niveau CSS avec la pseudo-classe ':hover'. On applique une transformation qui réinitialise le positionnement de la division. */
+
+.div1:hover{ 
+   z-index:10; 
+   opacity:1; 
+   -webkit-transform: translateX(10px); 
+   -moz-transform: translateX(10px); 
+   -o-transform: translateX(10px); 
+   -ms-transform: translateX(10px);
+}
+
+.div2{ 
+   background-image:url(../images/signature.jpg); 
+   -webkit-transform: translateX(110px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -moz-transform: translateX(110px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -o-transform: translateX(110px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -ms-transform: translateX(110px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+} 
+
+.div2:hover{ 
+   z-index:10; 
+   opacity:1; 
+   -webkit-transform: translateX(80px); 
+   -moz-transform: translateX(80px); 
+   -o-transform: translateX(80px); 
+   -ms-transform: translateX(80px); 
+}
+
+.div3{ 
+   background-image:url(../images/signature.jpg); 
+   -webkit-transform: translateX(223px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -moz-transform: translateX(223px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -o-transform: translateX(223px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -ms-transform: translateX(223px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+} 
+
+.div3:hover{ 
+   z-index:10; 
+   opacity:1; 
+   -webkit-transform: translateX(193px); 
+   -moz-transform: translateX(193px); 
+   -o-transform: translateX(193px); 
+   -ms-transform: translateX(193px); 
+}
+
+.div4{ 
+   background-image:url(../images/signature.jpg); 
+   -webkit-transform: translateX(330px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -moz-transform: translateX(330px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -o-transform: translateX(330px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+   -ms-transform: translateX(330px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
+} 
+
+.div4:hover{ 
+   z-index:10; 
+   opacity:1; 
+   -webkit-transform: translateX(300px); 
+   -moz-transform: translateX(300px); 
+   -o-transform: translateX(300px); 
+   -ms-transform: translateX(300px); 
+}
+
+/*******************************************************************************************************************************************
+********************************************* affichage creations **************************************************************************
+*******************************************************************************************************************************************/
+
+.card
+{
+	border:none;
+}
+
+.card-body
+{
+	border-radius:35px; 
+  	border:solid 4px silver; 
+}
+
+.card img
+{
+	box-shadow: 5px 5px 15px pink;
+	margin-bottom: 5px;
+}
+
+/*******************************************************************************************************************************************
+********************************************* affichage creation ***************************************************************************
+*******************************************************************************************************************************************/
+
+#commentaire h3
+{
+	margin-top:15px;
+
+}

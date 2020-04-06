@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- =========================================================================================================================================================================
+=========================================================== affichage d'une creation avec commentaire ===================================================================
+========================================================================================================================================================================= -->
+	<div class="container mt-4">		
+		<div class="row">			
+			<div class="card mb-4{{ creation.type }}"><!-- affiche une etiquette de la creation -->
+				<h1 class="card-title">						
+					{{ creation.titre }}						
+				</h1>
+				<div class="card-body">
+					<div class="mb-2">
+						<img src="{{ creation.image }}" alt="{{ creation.titre }}" width="640" height="360"/>
+					</div>					
+					<div class="card-text">
+						{{ creation .description }}
+					</div>
+				</div><!-- fin de card-body -->
+			</div><!-- fin de card -->		
+		</div><!-- fin de row creation-->
+		<secion id="commentaire"><!-- affiche les commentaires et le nombre de la creation et un formulaire pour ajouter commentaire -->
+			<h3>{{ creation.commentaires | length }} commentaires:</h3>
+			{% for commentaire in creation.commentaires %}<!-- lecture des commentaires -->
+			<div class="comment">
+				<div class="row mb-4">
+					<div class="col-3 bold">
+						Créer le {{ commentaire.createdAt | date ('d/m/Y') }} par {{ commentaire.auteur }}
+					</div>
+					<div class="col">
+						{{ commentaire.commentaire}}
+					</div>
+				</div><!-- fin de row commentaire-->
+			</div><!-- fin de .comment -->
+			{% endfor %}<!-- fin de lecture des commentaires -->
+			{% if app.user %}<!-- affiche le formulaire de commentaire si un utilisateur connecte -->
+				{{ form_start(commentForm) }}
+					{{ form_row(commentForm.auteur, {'label': 'Nom d\' utilisateur','attr' : {'placeholder': 'Votre nom' }}) }}
+					{{ form_row(commentForm.commentaire, {'label': 'Commentaire','attr' : {'placeholder': 'Votre commentaire' }}) }}					
+					<button type="submit" class="btn btn-success">Editer</button>
+				{{ form_end(commentForm) }}
+			{% endif %}<!-- fin de utilisateur connecté -->
+		</secion><!-- fin de #commentaire -->
+	</div><!-- fin de container -->
+{% endblock %}

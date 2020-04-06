@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Mes petits papiers Admin'%}
+
+{% block body %}
+<!-- =========================================================================================================================================================================
+=========================================================== gestions des creations en mode admin ========================================================================
+========================================================================================================================================================================= -->
+	<div class="container mt-4">
+		<h1>Gérer les créations</h1>
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Titre</th>
+				<th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for creation in creations %}<!-- lecture des creations -->
+			<tr>
+				<td>
+					<a href="{{ path('admin.creation_show', {'id': creation.id}) }}">{{ creation.titre }}</a>
+				</td>
+				<td>
+					<a href="{{ path('admin.creation.edit', {id: creation.id}) }}" class="btn btn-secondary">Editer</a>
+					<a href="{{ path('admin.creation.delete', {id: creation.id}) }}" class="btn btn-secondary">Supprimer</a>
+				</td>
+			<tr>
+			{% endfor %}<!-- fin de lecture des creations -->
+			</tbody>
+		</table>
+		<div class="right">
+			<a href="{{ path('admin.creation.importer') }}" class="btn btn-primary">Importer une nouvelle création</a>
+		</div>		
+	</div><!-- fin de container -->
+{% endblock %}

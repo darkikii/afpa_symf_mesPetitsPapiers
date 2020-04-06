@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- =========================================================================================================================================================================
+=========================================================== affichage des creations =====================================================================================
+========================================================================================================================================================================= -->
+	<div class="container mt-4"><!-- affiche une etiquette de la creation -->
+		<div class="row">
+			{% for creation in creations %}<!-- lecture des creations -->
+				<div class="card mb-4 col-4 {{ creation.type }}"> <!-- 3 creations par ligne -->
+					<div class="card-body">
+						<h3 class="card-title">
+							<a href="{{ path('creation_show', {'id': creation.id}) }}">
+								{{ creation.titre }}
+							</a>
+						</h3>
+						<div class="centrer">
+							<a href="{{ path('creation_show', {'id': creation.id}) }}">
+							<img src="{{ creation.image }}" alt="{{ creation.titre }}" /></a>
+						</div>
+						<div class="card-text justifier">
+							{{ creation .description }}
+						</div>
+					</div><!-- fin de card-body -->
+				</div><!-- fin de card -->
+			{% endfor %}<!-- fin de lecture des creations -->
+		</div><!-- fin de row -->
+	</div><!-- fin de container -->
+
+{% endblock %}
+

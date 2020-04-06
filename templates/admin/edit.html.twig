@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Mes petits papiers Admin'%}
+
+{% block body %}
+<!-- =========================================================================================================================================================================
+=========================================================== edition des creations en mode admin =========================================================================
+========================================================================================================================================================================= -->
+	<div class="container mt-4">
+		<h1>Editer le bien</h1>
+		{{ form_start(form) }}
+		<div class="row editer">
+			<div class="col-md-4">{{ form_row(form.titre) }}</div>
+			<div class="col-md-4">{{ form_row(form.type) }}</div><!-- (image ou video) -->
+			<div class="col-md-4">{{ form_row(form.image, {'attr': {'placeholder': 'Adresse de l\'image' }}) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">{{ form_row(form.description) }}</div>
+		</div>
+			{{ form_rest(form) }}
+			<button class="btn btn-primary">Editer</button>
+		{{ form_end(form) }}
+	</div><!-- fin de container -->
+{% endblock %}

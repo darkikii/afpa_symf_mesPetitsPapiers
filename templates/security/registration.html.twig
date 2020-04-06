@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- =========================================================================================================================================================================
+=========================================================== inscription utilisateur =====================================================================================
+========================================================================================================================================================================= -->	
+	<h2>Inscription</h2>
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="col-md-6">{{ form_row(form.username, {'label': 'Nom d\' utilisateur: ','attr' : {'placeholder': 'Votre nom' }}) }}</div>
+		<div class="col-md-6">{{ form_row(form.email, {'label': 'Adresse email: ','attr' : {'placeholder': 'Adresse email' }}) }}</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">{{ form_row(form.password, {'label': 'Mot de passe: ','attr' : {'placeholder': 'Mot de passe' }}) }}</div>
+		<div class="col-md-6">{{ form_row(form.confirm_password, {'label': 'Confirmation du mot de passe: ','attr' : {'placeholder': 'Repétez votre mot de passe' }}) }}</div>
+	</div>
+	<button type="submit" class="btn btn-success">Inscription</button>
+	{{ form_end(form) }}
+{% endblock %}
