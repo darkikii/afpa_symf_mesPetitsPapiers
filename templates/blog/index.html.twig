@@ -9,7 +9,7 @@
 			<div class="publication_parent">				
 				{% for creation in creations %}<!-- lecture des creations -->
 					{% set counter = ( counter | default(0) ) + 1 %}<!-- compteur pour gerer les class css -->
-					<div class="col-3 aspect-div div{{ counter }}">
+					<div class="col-3 aspect-div div{{ counter }}" style="background-image: url({{ creation.image }})">
 						<a href="{{ path('creation_show', {'id': creation.id}) }}">
 						<img src="{{ creation.image }}" alt="{{ creation.titre }}" /></a>
 					</div>			
