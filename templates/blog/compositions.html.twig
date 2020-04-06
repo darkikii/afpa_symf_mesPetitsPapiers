@@ -7,7 +7,7 @@
 	<div class="container mt-4"><!-- affiche une etiquette de la creation -->
 		<div class="row">
 			{% for creation in creations %}<!-- lecture des creations -->
-				<div class="card mb-4 col-4 {{ creation.type }}"> <!-- 3 creations par ligne -->
+				<div class="card mb-4 col-sm-12 col-lg-4 {{ creation.type }}" id="composition"> <!-- 3 creations par ligne -->
 					<div class="card-body">
 						<h3 class="card-title">
 							<a href="{{ path('creation_show', {'id': creation.id}) }}">

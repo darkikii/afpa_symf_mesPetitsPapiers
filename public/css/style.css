@@ -60,7 +60,13 @@ h3 a
 	background-image:  url(../images/Rose-menu.jpg);
 	margin: 10px;
 	padding:0px;
+   padding-left:10px;
 	border-radius: 40px;
+}
+
+#menubar
+{
+   width:100%;   
 }
 
 #menubar a
@@ -258,8 +264,8 @@ footer
 } 
 
 .aspect-div img{
-  width: 200;
-  height: 200;
+  width: 350;
+  height: 300;
   opacity: 0;
   filter: alpha(opacity=0); /* For IE8 and earlier */
 }
@@ -357,6 +363,12 @@ Le style initiale applique une série de transformations qui positionnent la div
 {
 	box-shadow: 5px 5px 15px pink;
 	margin-bottom: 5px;
+}
+
+#composition img
+{
+   width:250px;
+   height:250px;
 }
 
 /*******************************************************************************************************************************************
