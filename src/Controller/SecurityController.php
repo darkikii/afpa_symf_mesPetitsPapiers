@@ -10,6 +10,7 @@ use App\Entity\User;
 use App\Form\RegistrationType;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+
 class SecurityController extends AbstractController
 {
     /**
@@ -34,6 +35,7 @@ class SecurityController extends AbstractController
 
     		return $this->redirectToRoute('security_login');
     	}
+        
         /*affichage*/
         return $this->render('security/registration.html.twig', [
             'form' => $form->createView()
