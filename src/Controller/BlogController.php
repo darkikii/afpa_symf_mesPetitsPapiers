@@ -68,6 +68,11 @@ class BlogController extends AbstractController
                         ->setCreation($creation);
             $manager->persist($commentaire);
             $manager->flush();
+            /*message de reussite*/
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'Le commentaire a bien été ajouté.'
+            );
 
             return $this->redirectToRoute('creation_show', ['id' => $creation->getId()]);
         }

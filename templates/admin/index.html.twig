@@ -7,6 +7,14 @@
 =========================================================== gestions des creations en mode admin ========================================================================
 ========================================================================================================================================================================= -->
 	<div class="container mt-4">
+
+		<!-- affiche message de réussite -->
+		<div class="message">
+			{% for flashMessage in app.session.flashbag.get('success') %}
+   			{{ flashMessage }}
+			{% endfor %}
+		</div>
+		
 		<h1>Gérer les créations</h1>
 		<table class="table table-striped">
 			<thead>

@@ -13,7 +13,6 @@ use App\Form\CreationType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\CommentaireType;
 
-
 class AdminController extends AbstractController
 {
     /**
@@ -70,6 +69,12 @@ class AdminController extends AbstractController
 			$manager->persist($creation);
             $manager->flush();
 
+            /*message de reussite*/
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'La création c\'est bien déroulée.'
+            );
+
 			return $this->redirectToRoute('admin');
 		}
 		/*affichage*/
@@ -96,6 +101,12 @@ class AdminController extends AbstractController
 			$manager->persist($creation);
             $manager->flush();
 
+            /*message de reussite*/
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'La modification c\'est bien déroulé.'
+            );
+
 			return $this->redirectToRoute('admin');
 		}
 		/*affichage*/
@@ -120,6 +131,13 @@ class AdminController extends AbstractController
 		/*supprime la creation*/
 		$manager->remove($creation);
 		$manager->flush();
+
+		/*message de reussite*/
+        $this->get('session')->getFlashBag()->add(
+            'success',
+            'La création est bien supprimée.'
+        );
+
 		return $this->redirectToRoute('admin');
 	}
 
@@ -130,6 +148,13 @@ class AdminController extends AbstractController
 	{
 		$manager->remove($commentaire);
 		$manager->flush();
+
+		/*message de reussite*/
+        $this->get('session')->getFlashBag()->add(
+            'success',
+            'Le commentaire est bien supprimer.'
+        );
+
 		return $this->redirectToRoute('admin');
 	}
 
@@ -150,13 +175,23 @@ class AdminController extends AbstractController
             $manager->persist($commentaire);
             $manager->flush();
 
+            /*message de reussite*/
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'Le commentaire a bien été ajouté.'
+            );
+
             return $this->redirectToRoute('admin.creation_show', ['id' => $creation->getId()]);
         }
+        /*tri des commentaires par date*/
+        $repository = $this->getDoctrine()->getRepository(Commentaires::class);
+        $comment = $repository->triDate($creation->getId());
 
         /*affichage*/
         return $this->render('admin/comment/show.html.twig', [
             'creation' => $creation,
-            'commentForm' => $form->createView()
+            'commentForm' => $form->createView(),
+            'comment' => $comment
         ]);
     }
 }

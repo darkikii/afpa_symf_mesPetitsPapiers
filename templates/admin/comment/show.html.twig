@@ -22,9 +22,17 @@
 				</div><!-- fin de card-body -->
 			</div><!-- fin de card -->		
 		</div><!-- fin de row creation-->
+		
+		<!-- affiche message de réussite -->
+		<div class="message">
+			{% for flashMessage in app.session.flashbag.get('success') %}
+   			{{ flashMessage }}
+			{% endfor %}
+		</div>
+
 		<secion id="commentaire"> <!-- affiche les commentaires et le nombre de la creation et un formulaire pour ajouter commentaire -->
 			<h3>{{ creation.commentaires | length }} commentaires:</h3>
-			{% for commentaire in creation.commentaires %} <!-- lecture des commentaires -->
+			{% for commentaire in comment %} <!-- lecture des commentaires -->
 			<div class="comment">
 				<div class="row mb-4">
 					<div class="col-2"><!--  permet de supprimer un commentaire -->
