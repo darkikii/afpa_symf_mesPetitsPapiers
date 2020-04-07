@@ -13,13 +13,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Creation
 {
-    /*constante pour choix chauffage*/
-    /*const TYPE = [
-        video,
-        image
-    ];*/
-
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

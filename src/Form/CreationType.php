@@ -16,7 +16,11 @@ class CreationType extends AbstractType
             ->add('image')
             ->add('titre')
             ->add('description')
-            ->add('type')
+            ->add('type', ChoiceType::class, [
+                    'choices' => [
+                    'image' => 'image',
+                    'video' => 'video',
+            ]])
             /*->add('createdAt')*/
         ;
     }

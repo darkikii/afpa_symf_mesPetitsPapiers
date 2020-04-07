@@ -19,6 +19,17 @@ class CommentairesRepository extends ServiceEntityRepository
         parent::__construct($registry, Commentaires::class);
     }
 
+    public function triDate($id)/*tri du plus recent au plus ancien*/
+    {
+        return $this->createQueryBuilder('c')
+            ->andwhere('c.creation = :val')
+            ->setParameter('val', $id)
+            ->orderBy('c.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Commentaires[] Returns an array of Commentaires objects
     //  */

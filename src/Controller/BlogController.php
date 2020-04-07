@@ -71,11 +71,15 @@ class BlogController extends AbstractController
 
             return $this->redirectToRoute('creation_show', ['id' => $creation->getId()]);
         }
+        /*tri des commentaires par date*/
+        $repository = $this->getDoctrine()->getRepository(Commentaires::class);
+        $comment = $repository->triDate($creation->getId());
 
         /*affichage*/
         return $this->render('blog/show.html.twig', [
             'creation' => $creation,
-            'commentForm' => $form->createView()
+            'commentForm' => $form->createView(),
+            'comment' => $comment
         ]);
     }
 }
