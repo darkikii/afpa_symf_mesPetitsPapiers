@@ -9,9 +9,9 @@
 			<div class="publication_parent">				
 				{% for creation in creations %}<!-- lecture des creations -->
 					{% set counter = ( counter | default(0) ) + 1 %}<!-- compteur pour gerer les class css -->
-					<div class="col-3 aspect-div div{{ counter }}" style="background-image: url({{ creation.image }})">
+					<div class="col-3 aspect-div div{{ counter }}" style="background-image:url('../{{ vich_uploader_asset(creation) }}')">
 						<a href="{{ path('creation_show', {'id': creation.id}) }}">
-						<img src="{{ creation.image }}" alt="{{ creation.titre }}" /></a>
+						<img src="{{ vich_uploader_asset(creation) }}" alt="{{ creation.titre }}"/></a>
 					</div>			
 				{% endfor %}<!-- fin de lecture des creations -->
 			</div><!-- fin de .publication_parent -->

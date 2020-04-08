@@ -7,6 +7,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
 use App\Entity\Creation;
 use App\Entity\Commentaires;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\HttpFoundation\File\File;
 
 class CreationFixtures extends Fixture
 {
@@ -22,7 +24,7 @@ class CreationFixtures extends Fixture
 				$creation
 					->setTitre($faker->words(3,true))
 					->setDescription($faker->sentences(3,true))
-					->setImage("https://via.placeholder.com/250")
+					->setImageName('thumbnail.jpg')
 					->setCreatedAt($faker->dateTimeBetween('-6 months'))
 					->setType("video");
 			}
@@ -32,7 +34,7 @@ class CreationFixtures extends Fixture
 				$creation
 					->setTitre($faker->words(3,true))
 					->setDescription($faker->sentences(3,true))
-					->setImage("https://via.placeholder.com/250")
+					->setImageName('thumbnail (1).jpg')
 					->setCreatedAt($faker->dateTimeBetween('-6 months'))
 					->setType("image");
 			}

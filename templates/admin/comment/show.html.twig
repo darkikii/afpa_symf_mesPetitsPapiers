@@ -14,7 +14,7 @@
 				</h1>
 				<div class="card-body">
 					<div class="mb-2">
-						<img src="{{ creation.image }}" href="{{ path('admin.creation_show', {'id': creation.id}) }}" alt="{{ creation.titre }}" width="640" height="360"/>
+						<img src="{{ vich_uploader_asset(creation) }}" href="{{ path('admin.creation_show', {'id': creation.id}) }}" alt="{{ creation.titre }}" width="640" height="360"/>
 					</div>					
 					<div class="card-text">
 						{{ creation .description }}

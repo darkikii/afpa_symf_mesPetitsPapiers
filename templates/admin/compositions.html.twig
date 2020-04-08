@@ -15,7 +15,7 @@
 							</a>
 						</h3>
 						<div>
-							<img src="{{ creation.image }}" href="{{ path('admin.creation_show', {'id': creation.id}) }}" alt="{{ creation.titre }}" width="250" height="250"/>
+							<img src="{{ vich_uploader_asset(creation) }}" href="{{ path('admin.creation_show', {'id': creation.id}) }}" alt="{{ creation.titre }}" width="250" height="250"/>
 						</div>
 						<div class="card-text">
 							{{ creation .description }}

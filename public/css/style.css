@@ -286,7 +286,7 @@ footer
 Le style initiale applique une série de transformations qui positionnent la div de façon inclinée et tournée : */
 
 .div1{
-   /* background-image:url(../images/signature.jpg);  */
+    /* background-image:url(../images/signature.jpg); */  
    -webkit-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
    -moz-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 
    -o-transform: translateX(-10px) scale(0.7, 0.7) rotateY(40deg) skewY(-8deg); 

@@ -16,7 +16,7 @@
 						</h3>
 						<div class="centrer">
 							<a href="{{ path('creation_show', {'id': creation.id}) }}">
-							<img src="{{ creation.image }}" alt="{{ creation.titre }}" /></a>
+							<img src="{{ vich_uploader_asset(creation) }}" alt="{{ creation.titre }}" /></a>
 						</div>
 						<div class="card-text justifier">
 							{{ creation .description }}
